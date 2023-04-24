@@ -1,2 +1,8 @@
-package org.backend.wizardry.springbootcrashcoursewithvega.model;public enum Type {
+package org.backend.wizardry.springbootcrashcoursewithvega.model;
+
+public enum Type {
+    ARTICLE,
+    VIDEO,
+    TALK,
+    CONFERENCE
 }

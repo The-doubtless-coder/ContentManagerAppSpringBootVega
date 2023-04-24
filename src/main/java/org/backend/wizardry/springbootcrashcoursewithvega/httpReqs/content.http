@@ -1,0 +1,36 @@
+###get all content
+GET http://localhost:8080/v1.cont/allContent
+
+<> 2023-04-24T114240.200.json
+
+###get content by id
+GET http://localhost:8080/v1.cont/content/1
+
+###create a content
+POST http://localhost:8080/v1.cont/save
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "THE simp",
+  "description": "about a simp that turned samurai",
+  "status": "IDEA",
+  "contentType": "ARTICLE",
+  "dateCreated": "2023-04-24 11:46:54.26227",
+  "dataUpdated": null,
+  "url": null
+}
+
+###update content
+PUT http://localhost:8080/v1.cont/update/1
+Content-Type: application/json
+
+{
+  "title": "THE red rhino",
+  "description": "is updating cheap?",
+  "status": "IDEA",
+  "contentType": "ARTICLE",
+  "dateCreated": "2023-04-24 11:46:54.26227",
+  "dataUpdated": null,
+  "url": null
+}
