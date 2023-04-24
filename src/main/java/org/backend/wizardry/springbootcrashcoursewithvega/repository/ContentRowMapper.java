@@ -15,8 +15,8 @@ public class ContentRowMapper implements RowMapper<Content> {
         content.setDescription(rs.getString("description"));
         content.setStatus(rs.getString("status"));
         content.setContentType(rs.getString("content_type"));
-        content.setDateCreated(rs.getString("date_created"));
-        content.setDateCreated(rs.getString("date_updated"));
+        content.setDateCreated(rs.getTimestamp("date_created"));
+        content.setDataUpdated(rs.getTimestamp("date_updated"));
         content.setUrl(rs.getString("url"));
 
         return content;

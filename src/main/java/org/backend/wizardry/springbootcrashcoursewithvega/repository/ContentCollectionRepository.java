@@ -7,6 +7,7 @@ import org.backend.wizardry.springbootcrashcoursewithvega.model.Status;
 import org.backend.wizardry.springbootcrashcoursewithvega.model.Type;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,13 +71,13 @@ public class ContentCollectionRepository {
     public void init() {
         Content content = new Content(1,
                 "Movie", "About movies from the 90s",
-                Status.IDEA.toString(), Type.VIDEO.toString(), LocalDateTime.now().toString(), LocalDateTime.now().toString(), null);
+                Status.IDEA.toString(), Type.VIDEO.toString(), Timestamp.valueOf(LocalDateTime.now()), null, null);
         Content content1 = new Content(2,
                 "minutes", "About minutes of the conference",
-                Status.IDEA.toString(), Type.CONFERENCE.toString(), LocalDateTime.now().toString(), LocalDateTime.now().toString(), null);
+                Status.IDEA.toString(), Type.CONFERENCE.toString(), Timestamp.valueOf(LocalDateTime.now()), null, null);
         Content content2 = new Content(3,
                 "about games in kenya", "About kenyan games",
-                Status.IDEA.toString(), Type.ARTICLE.toString(), LocalDateTime.now().toString(), LocalDateTime.now().toString(), null);
+                Status.IDEA.toString(), Type.ARTICLE.toString(), Timestamp.valueOf(LocalDateTime.now()), null, null);
 
         contentList.add(content);
         contentList.add(content1);

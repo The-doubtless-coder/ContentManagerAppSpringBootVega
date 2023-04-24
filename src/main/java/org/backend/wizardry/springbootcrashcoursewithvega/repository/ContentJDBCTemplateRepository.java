@@ -8,6 +8,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,8 +30,8 @@ public class ContentJDBCTemplateRepository {
                 rs.getString("description"),
                 rs.getString("status"),
                 rs.getString("content_type"),
-                rs.getString("date_created"),
-                rs.getString("date_updated"),
+                rs.getTimestamp("date_created"),
+                rs.getTimestamp("date_updated"),
                 rs.getString("url")));
         return query;
     }
@@ -65,9 +67,10 @@ public class ContentJDBCTemplateRepository {
         if(!b){
             throw new ContentNotFoundException("the object to be updated does not exist");
         }
-        String addContentQuery = "UPDATE Content SET title=?, description=?, status=?, content_type=?, date_created=?, date_updated=?, url=? WHERE id=?";
+        content.setDataUpdated(Timestamp.valueOf(LocalDateTime.now()));
+        String addContentQuery = "UPDATE Content SET title=?, description=?, status=?, content_type=?, date_updated=?, url=? WHERE id=?";
         return jdbcTemplate.update(addContentQuery, content.getTitle(),
-                content.getDescription(), content.getStatus(), content.getContentType(), content.getDateCreated(), null, null, id);
+                content.getDescription(), content.getStatus(), content.getContentType(), content.getDataUpdated(), null, id);
     }
     private boolean doesObjectExist(Integer stringToCheck) {
         String sql = "SELECT count(*) FROM Content WHERE id = ?";

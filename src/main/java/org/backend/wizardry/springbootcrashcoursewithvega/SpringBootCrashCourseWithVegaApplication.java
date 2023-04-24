@@ -3,6 +3,7 @@ package org.backend.wizardry.springbootcrashcoursewithvega;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.backend.wizardry.springbootcrashcoursewithvega.configs.SampleConfigProperties;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.TypeExcludeFilter;
@@ -13,7 +14,7 @@ import java.util.Arrays;
 
 @SpringBootApplication
 @EnableConfigurationProperties(SampleConfigProperties.class)
-public class SpringBootCrashCourseWithVegaApplication {
+public class SpringBootCrashCourseWithVegaApplication implements CommandLineRunner {
     private Log logger = LogFactory.getLog(this.getClass());
 
     public static void main(String[] args) {
@@ -24,4 +25,8 @@ public class SpringBootCrashCourseWithVegaApplication {
         System.setProperty("spring.profiles.active","devil");
     }
 
+    @Override
+    public void run(String... args) throws Exception {
+
+    }
 }

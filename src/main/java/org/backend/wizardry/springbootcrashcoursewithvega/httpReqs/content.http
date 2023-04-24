@@ -16,7 +16,7 @@ Accept: application/json
   "description": "about a simp that turned samurai",
   "status": "IDEA",
   "contentType": "ARTICLE",
-  "dateCreated": "2023-04-24 11:46:54.26227",
+  "dateCreated": "2023-04-24 20:12:43.0216443Z",
   "dataUpdated": null,
   "url": null
 }
@@ -26,11 +26,11 @@ PUT http://localhost:8080/v1.cont/update/1
 Content-Type: application/json
 
 {
-  "title": "THE red rhino",
+  "title": "THE white rhino",
   "description": "is updating cheap?",
   "status": "IDEA",
   "contentType": "ARTICLE",
-  "dateCreated": "2023-04-24 11:46:54.26227",
+  "dateCreated": "2023-04-24 11:46:54",
   "dataUpdated": null,
   "url": null
 }
